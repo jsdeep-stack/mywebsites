@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset = "utf-8"/>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0"/>
+        <title>New Tab (Made By Sutirtha Soor)</title>
+        <link rel="stylesheet" href="styles/styling-2.css">
+</head>
+<body>
+    <div class="image">
+        <img src="images/google.png" style="height: 100px; width: 300px;" alt="">
+    </div>
+        <div class="container">
+            <form id="form" action="" method="get" target="_blank">
+                <input id="search" type="text", placeholder="Search.....">
+                <button id="search" type="seacrh">Search</button>
+            </form>
+        </div>
+        <script>
+            const form = document.getElementById("form");
+            const search = document.getElementById("search");
+
+            search.addEventListener("focus", function(){
+                search.classList.add("mint-green");
+            });
+
+            search.addEventListener("blur", function(){
+                search.classList.remove("mint-green");
+            });
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const query = search.value.trim();
+                const url = "https://www.google.com/search?q="+query;
+                window.open(url, "_blank");
+
+            });
+        </script>
+</body>
+</html>
+
